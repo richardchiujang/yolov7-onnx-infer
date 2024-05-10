@@ -10,60 +10,14 @@ from yolov7.utils import Yolov7onnx
 
 def make_parser():
     parser = argparse.ArgumentParser("onnxruntime inference sample")
-    parser.add_argument(
-        "-mo",
-        "--mode",
-        type=str,
-        default="image",
-        help="Inputfile format",
-    )
-    parser.add_argument(
-        "-m",
-        "--model",
-        type=str,
-        default="model/yolov7-tiny.onnx",
-        help="Input your onnx model.",
-    )
-    parser.add_argument(
-        "-i",
-        "--input_path",
-        type=str,
-        default='horses.jpg',
-        help="Path to your input image.",
-    )
-    parser.add_argument(
-        "-o",
-        "--output_dir",
-        type=str,
-        default='output',
-        help="Path to your output directory.",
-    )
-    parser.add_argument(
-        "-s",
-        "--score_thr",
-        type=float,
-        default=0.3,
-        help="Score threshould to filter the result.",
-    )
-    parser.add_argument(
-        "-e",
-        "--extract",
-        type=str,
-        default=None,
-        help="extract a class",
-    )
-    parser.add_argument(
-        "-c",
-        "--cuda",
-        action="store_true",
-        help="cuda use",
-    )
-    parser.add_argument(
-        "--frame_max",
-        type=int,
-        default=100,
-        help="Maximum number of frames to save in webcam.",
-    )
+    parser.add_argument("-mo", "--mode", type=str, default="image", help="Inputfile format",)
+    parser.add_argument("-m", "--model", type=str, default="model/yolov7-tiny.onnx", help="Input your onnx model.",)
+    parser.add_argument("-i", "--input_path", type=str, default='horses.jpg', help="Path to your input image.",)
+    parser.add_argument("-o", "--output_dir", type=str, default='output', help="Path to your output directory.",)
+    parser.add_argument("-s", "--score_thr", type=float, default=0.3, help="Score threshould to filter the result.",)
+    parser.add_argument("-e", "--extract", type=str, default=None, help="extract a class",)
+    parser.add_argument("-c", "--cuda", action="store_true", help="cuda use",)
+    parser.add_argument("--frame_max", type=int, default=1000, help="Maximum number of frames to save in webcam.",)
     return parser
 
 
