@@ -16,7 +16,7 @@ def make_parser():
     parser.add_argument("-o", "--output_dir", type=str, default='output', help="Path to your output directory.",)
     parser.add_argument("-s", "--score_thr", type=float, default=0.3, help="Score threshould to filter the result.",)
     parser.add_argument("-e", "--extract", type=str, default=None, help="extract a class",)
-    parser.add_argument("-c", "--cuda", action="store_true", help="cuda use",)
+    parser.add_argument("-c", "--cuda", action=False, help="cuda use",) # "store_true"
     parser.add_argument("--frame_max", type=int, default=1000, help="Maximum number of frames to save in webcam.",)
     return parser
 
